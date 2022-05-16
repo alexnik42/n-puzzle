@@ -3,12 +3,12 @@
 **N-puzzle solver (School 42 Project)**
 <br></br>
 
-# About n-puzzle
+## About n-puzzle
 
 **The n-puzzle** is a sliding puzzle having `n * n - 1` square tiles numbered from `1` to ` n * n - 1` in a frame that is `n` tiles high and `n` tiles wide, leaving one unoccupied tile position. Tiles in the same row or column of the open position can be moved by sliding them horizontally or vertically, respectively. The goal of the puzzle is to place the tiles in spiral order. [[Wiki]](https://en.wikipedia.org/wiki/15_puzzle)
 
 
-## How to use
+### How to use
 
 1. Install required packages:
 
@@ -34,7 +34,7 @@
 
 3. Try again :) <br></br>
 
-# Heuristics
+## Heuristics
 
 - **Admissible** - guarantees optimal solution [[Wiki]](https://en.wikipedia.org/wiki/Admissible_heuristic)
 	- Manhattan distance
@@ -45,15 +45,15 @@
 - **Non-admissible** - A non-admissible heuristic may overestimate the cost of reaching the goal. It may or may not result in an optimal solution. However, the advantage is that sometimes, a non-admissible heuristic expands much fewer nodes. Thus, the total cost (= search cost + path cost) may actually be lower than an optimal solution using an admissible heuristic. [[Source]](https://cse.iitk.ac.in/users/cs365/2009/ppt/13jan_Aman.pdf)
 	- Nilsson's sequence score <br></br>
 
-# Output
+## Output
 
 <img src="./resources/images/solver_output.png" height="400" alt="solver_output"> <br></br>
 
-# Visualizer
+## Visualizer
 
 <img src="./resources/images/visualizer.gif" height="400" alt="visualizer"> <br></br>
 
-# Additional tools
+## Additional tools
 
 - **Puzzles generator**. Usage:
 
