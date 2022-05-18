@@ -65,6 +65,8 @@ class Solution:
                 self.puzzle_params['heuristic_function'] = heuristics.out_of_place
             elif args['heuristic_function'] == 'out_of_row_and_col':
                 self.puzzle_params['heuristic_function'] = heuristics.out_of_row_and_col
+            elif args['heuristic_function'] == 'nilsson':
+                self.puzzle_params['heuristic_function'] = heuristics.nilsson_sequence_score
             else:
                 raise SyntaxError("Error! Heuristic function '{}' is not supported".format(
                     args['heuristic_function']))

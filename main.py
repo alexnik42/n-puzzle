@@ -1,4 +1,5 @@
-import os  # noqa
+import os
+from telnetlib import NAOCRD  # noqa
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"  # noqa
 
 import argparse
@@ -26,7 +27,7 @@ if __name__ == "__main__" or __name__ == "__tester__":
 
     if '-g' not in sys.argv and '-n' not in sys.argv:
         parser.add_argument('heuristic_function', metavar='heuristic_function', default='manhattan', choices=[
-                            'manhattan', 'euclid', 'out_of_place', 'out_of_row_and_col'], help='specifies heuristic function (not specified if -g or -n flag is enabled)')
+                            'manhattan', 'euclid', 'out_of_place', 'out_of_row_and_col', 'nilsson'], help='specifies heuristic function (not specified if -g or -n flag is enabled)')
     parser.add_argument('file', metavar='file',
                         help='file, which contains the initial grid')
 
@@ -40,8 +41,8 @@ if __name__ == "__main__" or __name__ == "__tester__":
             solution.print_result(0, False)
             sys.exit()
 
-        if not args['non_admissible_heuristics'] and solution.puzzle_info['size'] > 4:
-            print(colored(colorama.Fore.LIGHTRED_EX + "WARNING! Solving n-puzzle bigger than 4x4 with admissible heuristics may take a lot of time..." +
+        if not args['non_admissible_heuristics'] and solution.puzzle_info['size'] > 4 and ('heuristic_function' in args and args['heuristic_function'] not in ['manhattan', 'nilsson']):
+            print(colored(colorama.Fore.LIGHTRED_EX + "WARNING! Solving n-puzzle bigger than 4x4 with admissible heuristics other than Manhattan distance may take a lot of time..." +
                   colorama.Style.RESET_ALL, attrs=['bold']))
 
         start_time = time.time()

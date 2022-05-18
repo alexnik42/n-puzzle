@@ -53,6 +53,9 @@
 
 <img src="./resources/images/visualizer.gif" height="400" alt="visualizer"> <br></br>
 
+Try `python3 main.py -u -v nilsson resources/puzzles7x7.txt` for really fun visualizer! :)
+<br></br>
+
 ## Additional tools
 
 - **Puzzles generator**. Usage:
